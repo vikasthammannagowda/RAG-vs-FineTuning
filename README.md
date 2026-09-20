@@ -625,3 +625,161 @@ Benefits of converting the model for Ollama include:
 - Works similarly to the original `phi3:mini` model.
 
 At this point, your fine-tuned model behaves just like the base Phi-3 Mini model from the user's perspective, except that it has learned to incorporate manga-focused knowledge and recommendations based on your training data.
+
+# Step 5 - Publish the Fine-Tuned Model to Hugging Face (Optional)
+
+Once you are satisfied with your fine-tuned model, you can publish it to Hugging Face so that others can download and use it. Sharing models through Hugging Face makes distribution easier and provides a convenient way to host model files, documentation, and version information.
+
+> **Note:** This step is optional and is not required to run the model locally.
+
+---
+
+## Step 5.1 - Create a Hugging Face Account
+
+If you do not already have an account, create one at:
+
+https://huggingface.co
+
+After creating your account, log in and verify that you can access your profile page.
+
+---
+
+## Step 5.2 - Install the Hugging Face CLI
+
+In your terminal, install the Hugging Face Hub package:
+
+```bash
+pip install huggingface_hub
+```
+
+Verify the installation:
+
+```bash
+huggingface-cli --help
+```
+
+---
+
+## Step 5.3 - Log In to Hugging Face
+
+Authenticate using your Hugging Face account:
+
+```bash
+huggingface-cli login
+```
+
+Paste your access token when prompted.
+
+You can create an access token from:
+
+```text
+Settings → Access Tokens
+```
+
+Choose **Write** permissions so you can upload model files.
+
+---
+
+## Step 5.4 - Create a Model Repository
+
+From the Hugging Face website, create a new model repository.
+
+Example:
+
+```text
+username/anime-phi3
+```
+
+You may choose either:
+
+- Public Repository
+- Private Repository
+
+---
+
+## Step 5.5 - Upload the Fine-Tuned Model
+
+Navigate to the folder containing your merged model:
+
+```bash
+cd anime_model_merged
+```
+
+Upload the model files:
+
+```bash
+huggingface-cli upload username/anime-phi3 .
+```
+
+The upload may take several minutes depending on your internet connection and model size.
+
+---
+
+## Step 5.6 - Verify the Upload
+
+Open your model page in a browser:
+
+```text
+https://huggingface.co/username/anime-phi3
+```
+
+Verify that the repository contains:
+
+- Model files
+- Configuration files
+- Tokenizer files
+- README documentation (if included)
+
+---
+
+## Step 5.7 - Add a Model Card (Recommended)
+
+A model card helps other users understand:
+
+- The purpose of the model
+- Training methodology
+- Dataset size
+- Intended use cases
+- Limitations
+
+Example information to include:
+
+```text
+Base Model: Phi-3 Mini
+
+Training Datasets:
+- 31 Examples
+- 94 Examples
+- 285 Examples
+
+Domain:
+Japanese Manga Recommendations
+
+Training Method:
+LoRA Fine-Tuning
+
+Intended Use:
+Educational demonstration of Fine-Tuning versus Retrieval-Augmented Generation (RAG)
+```
+
+---
+
+## Project Complete
+
+At this point, you have:
+
+✅ Installed and tested Phi-3 Mini
+
+✅ Established a baseline model
+
+✅ Implemented Retrieval-Augmented Generation (RAG)
+
+✅ Fine-tuned Phi-3 Mini using custom datasets
+
+✅ Compared Base, RAG, and Fine-Tuned responses
+
+✅ Converted the fine-tuned model for Ollama usage
+
+✅ Published the model to Hugging Face (optional)
+
+You now have a complete end-to-end demonstration that showcases the differences between Retrieval-Augmented Generation (RAG) and Fine-Tuning using the same base model.
