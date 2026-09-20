@@ -1,5 +1,74 @@
 # RAG-vs-FineTuning
 
+# Project Overview
+
+This project demonstrates two common techniques used to customize Large Language Models (LLMs):
+
+1. Retrieval-Augmented Generation (RAG)
+2. Fine-Tuning
+
+Both approaches use the same base model, Phi-3 Mini, but modify its behavior in different ways.
+
+The goal of this project is to make the model consistently include Japanese manga references in its responses and to compare how RAG and Fine-Tuning achieve that objective.
+
+---
+
+## Learning Objectives
+
+By completing this guide, you will learn how to:
+
+- Run a local LLM using Ollama.
+- Chat with the base Phi-3 Mini model.
+- Add external knowledge using Retrieval-Augmented Generation (RAG).
+- Fine-tune a model using custom training data.
+- Compare the strengths and weaknesses of RAG and Fine-Tuning.
+- Convert a fine-tuned model into a standalone Ollama model.
+- Upload a fine-tuned model to Hugging Face.
+
+---
+
+## Project Workflow
+
+The guide is organized into the following sections:
+
+### Step 0
+Verify Python is installed and ready to use.
+
+### Step 1
+Install Ollama and download Phi-3 Mini.
+
+### Step 2
+Create a virtual environment and test the base model.
+
+### Step 3
+Run the RAG implementation and observe how retrieved knowledge influences responses.
+
+### Step 4
+Fine-tune Phi-3 Mini using custom manga-focused training datasets.
+
+### Step 4A
+Convert the fine-tuned model into a standalone Ollama model.
+
+---
+
+## Understanding the Comparison
+
+Throughout this guide, you will compare three versions of the same model:
+
+### Base Model
+
+The original Phi-3 Mini model with no modifications.
+
+### RAG-Enhanced Model
+
+The original Phi-3 Mini model augmented with an external knowledge source at runtime.
+
+### Fine-Tuned Model
+
+A modified version of Phi-3 Mini trained on manga-specific examples.
+
+By comparing the responses from all three systems, you will gain a practical understanding of when RAG is appropriate, when Fine-Tuning is beneficial, and the trade-offs associated with each approach.
+
 # Hardware Requirements
 
 This project was developed and tested using the following hardware:
